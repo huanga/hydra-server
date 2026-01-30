@@ -28,12 +28,12 @@ const makeUserPrompt = (
   ${comments.map((comment, index) => `${index + 1}. ${comment}`).join("\n")}
 `;
 
-let MODEL_ID: string = ""
+let MODEL_ID: string = "";
 
 if (ai_provider == "groq") {
-  MODEL_ID = 'openai/gpt-oss-20b';
+  MODEL_ID = "openai/gpt-oss-20b";
 } else {
-  MODEL_ID = process.env.OPENAI_SUMMARY_MODEL || "gpt-4.1-mini"
+  MODEL_ID = process.env.OPENAI_SUMMARY_MODEL || "gpt-4.1-mini";
 }
 
 export async function summarizeComments(req: Request) {

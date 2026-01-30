@@ -27,12 +27,12 @@ const makeUserPrompt = (
   Text: ${postText}
 `;
 
-let MODEL_ID: string = ""
+let MODEL_ID: string = "";
 
 if (ai_provider == "groq") {
-  MODEL_ID = 'openai/gpt-oss-20b';
+  MODEL_ID = "openai/gpt-oss-20b";
 } else {
-  MODEL_ID = process.env.OPENAI_SUMMARY_MODEL || "gpt-4.1-mini"
+  MODEL_ID = process.env.OPENAI_SUMMARY_MODEL || "gpt-4.1-mini";
 }
 
 export async function summarizePostDetails(req: Request) {
@@ -50,7 +50,7 @@ export async function summarizePostDetails(req: Request) {
   }
 
   // Generate the summary using Groq
- 
+
   const { text, usage } = await generateText({
     model: aiClient(MODEL_ID),
     maxOutputTokens: 1_000,

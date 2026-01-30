@@ -6,12 +6,12 @@ import { ai_provider } from "../../utils/models";
 import { generateText } from "ai";
 import { db } from "../../db/db";
 
-let MODEL_ID: string = ""
+let MODEL_ID: string = "";
 
 if (ai_provider == "groq") {
-  MODEL_ID = 'llama-3.3-70b-versatile';
+  MODEL_ID = "llama-3.3-70b-versatile";
 } else {
-  MODEL_ID = process.env.OPENAI_FILTER_MODEL || "gpt-4.1-mini"
+  MODEL_ID = process.env.OPENAI_FILTER_MODEL || "gpt-4.1-mini";
 }
 
 const makeSystemPrompt = (schemaDescription: string) =>

@@ -8,7 +8,7 @@ export interface Usage {
   completionTokens: number;
 }
 
-type ModelId = keyof typeof MODEL_COSTS;
+export type ModelId = keyof typeof MODEL_COSTS;
 
 const MODEL_COSTS = {
   "llama-3.1-8b-instant": {
@@ -27,7 +27,8 @@ const MODEL_COSTS = {
     inputTokenCost: 2.0 / 1_000_000,
     outputTokenCost: 8.0 / 1_000_000,
   },
-  "others": { // catch-all for models not in the list
+  others: {
+    // catch-all for models not in the list
     inputTokenCost: 0.0 / 1_000_000,
     outputTokenCost: 0.0 / 1_000_000,
   },

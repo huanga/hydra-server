@@ -1,6 +1,8 @@
 import { summarizePostDetails } from "./summarizePostDetails";
 import { summarizeComments } from "./summarizeComments";
 import { filterPosts } from "./filterPosts";
+import { createEmbedding } from "./createEmbedding";
+import { askQuestion } from "./askQuestion";
 
 export default {
   "/api/ai/summarizePostDetails": {
@@ -11,5 +13,11 @@ export default {
   },
   "/api/ai/filterPosts": {
     POST: filterPosts,
+  },
+  "/api/ai/createEmbedding": {
+    POST: createEmbedding,
+  },
+  "/api/ai/askQuestion": {
+    POST: askQuestion,
   },
 };
