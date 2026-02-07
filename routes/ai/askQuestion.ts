@@ -25,7 +25,8 @@ Answer the user's question using ONLY the information from the provided document
 - If the documents don't contain the answer, say: "I don't have information about that in the current documentation."
 - Links should ALWAYS be at the end of your response
 - Links should NEVER be in the body of your response, only at the bottom
-- Links should be seperated with a | character
+- If you need to include multiple links, they should be seperated with a | character
+- Do not make up links
 
 ## Tone
 Be friendly, clear, and direct. Avoid unnecessary preambles like "Based on the documents..." - just provide the answer.
@@ -59,12 +60,12 @@ export async function askQuestion(req: Request) {
     model: aiClient("openai/gpt-oss-120b"),
     messages: [
       {
-        role: "system",
-        content: systemPrompt,
-      },
-      {
         role: "user",
         content: userMessage,
+      },
+      {
+        role: "system",
+        content: systemPrompt,
       },
     ],
   });
