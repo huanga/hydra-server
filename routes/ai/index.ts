@@ -4,7 +4,7 @@ import { filterPosts } from "./filterPosts";
 import { createEmbedding } from "./createEmbedding";
 import { askQuestion } from "./askQuestion";
 import { translatePost } from "./translatePost";
-import { translateComment } from "./translateComments";
+import { translateComment } from "./translateComment";
 
 export default {
   "/api/ai/summarizePostDetails": {
